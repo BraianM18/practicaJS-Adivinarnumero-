@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+    <link rel="stylesheet" href="adivinar.css">
+    <title>Juego del Número Secreto</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="imagen"><img src="pikachu.jpg" alt="Pikachu"></div>
+        <div class="contenedor_texto">
+            <h1></h1>
+            <p></p>
+            <input type="text" class="texto" id="texto">
+            <div class="contenedor_botones">
+                <button onclick="verificarNumero();" class="intentar">Intentar</button>
+                <button onclick="reiniciar();" id="reiniciar" class="nuevo_juego" disabled>Nuevo Juego</button>
+            </div>
+        </div>
+    </div>
+    <script src="adivinar.js"></script>
+</body>
+</html>

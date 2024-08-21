@@ -1,0 +1,164 @@
+/* Estilos globales */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Añadir tipografía personalizada */
+body {
+    font-family: 'Pokemon Solid', sans-serif;
+    background-image: url(fondo.png);
+    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center center; /* Centra la imagen */
+    height: 100%; /* Asegura que el body ocupe toda la altura de la ventana */
+    margin: 0; /* Elimina el margen por defecto del body */
+    
+}
+
+/* Estilos para el contenedor principal */
+.contenedor {
+    position: relative; /* Necesario para el posicionamiento absoluto del pseudo-elemento */
+    width: 100%; 
+    max-width: 800px; 
+    height: 500px;
+    /* border: 1px solid rgb(22, 29, 100); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto; 
+    margin-top: 200px;
+    border-radius: 20px;
+    overflow: hidden; /* Oculta el pseudo-elemento que se salga del contenedor */
+}
+
+/* Pseudo-elemento para el fondo con opacidad */
+.contenedor::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(169, 171, 189);
+    opacity: 0.4;
+    border-radius: 20px;
+    z-index: -1; /* Envía el pseudo-elemento detrás del contenido */
+}
+
+/* Estilos para el encabezado */
+h1 {
+    text-align: center;
+    color: #fcc61591;
+    -webkit-text-stroke-width: 0.50px;
+  -webkit-text-stroke-color: rgb(245, 244, 244);
+    letter-spacing: 2px;
+}
+
+/* Estilos para el párrafo */
+p {
+    margin-top: 20px;
+    color: rgb(71, 77, 110);
+    letter-spacing: 2px;
+}
+
+/* Estilos para el contenedor del texto */
+.contenedor_texto {
+    flex: 1;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos para la imagen */
+.imagen img {
+    width: 300px;
+    height: 435px;
+    border-radius: 20px;
+    margin-left: 40px;
+}
+
+/* Estilos para los botones */
+.contenedor_botones {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+    font-family: 'Pokemon Solid', sans-serif;
+    color: #FFFFFF;
+    background-color: #fcc61591;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    letter-spacing: 0.5;
+    border: 1px solid #fcc615;;
+}
+
+button:hover {
+    background-color: #f3a600;
+    cursor: pointer;
+}
+
+button.pressed {
+    transform: scale(0.95);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/* Estilos para el campo de texto */
+.texto {
+    width: 200px;
+    height: 60px;
+    margin: 20px 0;
+    border-radius: 20px;
+    text-align: center; /* Centra el texto dentro del input */
+}
+
+
+/* Media Query para pantallas con un ancho máximo de 600px (dispositivos móviles) */
+@media (max-width: 600px) {
+    /* Ajustar el tamaño del contenedor */
+    .contenedor {
+        max-width: 90%; /* Ajusta el contenedor al 90% del ancho de la pantalla */
+        height: auto; /* Permite que la altura sea dinámica según el contenido */
+        margin-top: 50px; /* Reduce el margen superior para evitar desplazamiento excesivo */
+        padding: 20px;
+    }
+
+    /* Ajustar el tamaño de la imagen */
+    .imagen img {
+        width: 100%; /* Ocupa todo el ancho del contenedor */
+        height: auto; /* Mantén la relación de aspecto */
+        margin-left: 0; /* Centra la imagen */
+    }
+
+    /* Ajustar el tamaño del texto */
+    .contenedor_texto {
+        padding: 1rem; /* Reduce el padding para que haya más espacio */
+    }
+
+    /* Ajustar el tamaño de los botones */
+    button {
+        padding: 15px;
+        width: 100%; /* Hacer que los botones ocupen todo el ancho disponible */
+        font-size: 16px; /* Ajustar el tamaño de la fuente para mejor legibilidad */
+    }
+
+    /* Ajustar el tamaño del campo de texto */
+    .texto {
+        width: 100%; /* Hacer que el input ocupe todo el ancho disponible */
+        height: 50px; /* Ajustar la altura del input */
+    }
+
+    /* Ajustar el encabezado */
+    h1 {
+        font-size: 1.5rem; /* Reduce el tamaño del texto del encabezado */
+    }
+}
+
